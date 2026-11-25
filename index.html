@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Osteria del Vicolo | Alta Cocina Italiana en Madrid</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-espresso: #1c1613;
+      --color-oliva: #3d4f38;
+      --color-crema: #f7f3eb;
+      --color-terracota: #9e3324;
+      --color-oro: #d9a05b;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-crema text-espresso font-sans antialiased">
+
+  <!-- Barra de navegación -->
+  <header class="bg-crema/95 backdrop-blur-md border-b border-espresso/10 sticky top-0 z-30">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#inicio" class="flex items-center gap-2 group">
+        <span class="font-display font-bold text-3xl tracking-tight text-espresso">Osteria <span class="italic text-terracota">del Vicolo</span></span>
+      </a>
+      <div class="hidden md:flex gap-9 text-espresso/80 font-medium text-sm tracking-wide uppercase">
+        <a href="#filosofia" class="hover:text-terracota transition">La Tradición</a>
+        <a href="#carta" class="hover:text-terracota transition">La Carta</a>
+        <a href="#bodega" class="hover:text-terracota transition">Bodega</a>
+        <a href="#opiniones" class="hover:text-terracota transition">Reseñas</a>
+      </div>
+      <a href="#reservas" class="hidden md:inline-block bg-terracota hover:bg-espresso text-white text-sm font-semibold px-6 py-2.5 rounded-full transition shadow-sm">Reservar mesa</a>
+      <!-- Botón Hamburguesa móvil -->
+      <button id="btn-menu" class="md:hidden p-2 text-2xl text-espresso" aria-label="Abrir menú">☰</button>
+    </nav>
+    <!-- Menú móvil -->
+    <div id="menu-movil" class="hidden md:hidden border-t border-espresso/10 bg-crema px-6 py-4 flex flex-col gap-4 font-medium">
+      <a href="#filosofia" class="hover:text-terracota">La Tradición</a>
+      <a href="#carta" class="hover:text-terracota">La Carta</a>
+      <a href="#bodega" class="hover:text-terracota">Bodega</a>
+      <a href="#opiniones" class="hover:text-terracota">Reseñas</a>
+      <a href="#reservas" class="text-terracota font-semibold">Reservar mesa →</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative bg-espresso text-crema overflow-hidden">
+    <div class="absolute inset-0 opacity-35">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1920&q=80" alt="Pasta fresca artesanal" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-espresso via-espresso/85 to-transparent"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7">
+        <span class="inline-block border border-oro/40 text-oro text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">Pasta fresca hecha a mano cada mañana · Desde 1998</span>
+        <h1 class="font-display font-bold text-5xl md:text-7xl leading-[1.05] mb-6">El alma de la Toscana, <span class="italic font-semibold text-oro">servida en Madrid</span></h1>
+        <p class="text-lg text-crema/80 mb-9 max-w-xl leading-relaxed">Harinas italianas molidas a la piedra, trufa blanca del Piamonte y recetas familiares cocinadas a fuego lento en horno de leña.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#reservas" class="bg-terracota hover:bg-oro hover:text-espresso text-white font-semibold px-8 py-4 rounded-full transition shadow-lg">Reservar mesa</a>
+          <a href="#carta" class="border border-crema/40 hover:bg-crema/10 text-crema font-medium px-8 py-4 rounded-full transition">Explorar la carta</a>
+        </div>
+      </div>
+      <div class="md:col-span-5 hidden md:block">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-crema/10 rotate-2 hover:rotate-0 transition duration-500">
+          <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80" alt="Tagliatelle al ragú" class="w-full h-[460px] object-cover" />
+          <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-espresso/90 to-transparent p-6">
+            <p class="font-display italic text-xl text-oro">Tagliatelle al Ragù Bolognese</p>
+            <p class="text-xs text-crema/75">6 horas de cocción lenta · Parmigiano 36 meses</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filosofía y Menú Degustación -->
+  <section id="filosofia" class="scroll-mt-20 py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-5 relative">
+        <img src="https://images.unsplash.com/photo-1556761223-4c4282c73f77?auto=format&fit=crop&w=800&q=80" alt="Amasando pasta fresca" class="rounded-3xl shadow-xl w-full h-[440px] object-cover" />
+        <div class="absolute -bottom-6 -right-6 bg-espresso text-crema p-6 rounded-2xl shadow-xl hidden sm:block">
+          <p class="font-display text-3xl font-bold text-oro">100%</p>
+          <p class="text-xs uppercase tracking-wider text-crema/80">Sémola de grano duro<br/>y huevo campero</p>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 md:pl-6">
+        <span class="text-terracota font-semibold text-xs uppercase tracking-widest">Nuestra Filosofía</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mt-2 mb-6 leading-tight">La paciencia es nuestro ingrediente principal</h2>
+        <p class="text-espresso/75 text-lg mb-6 leading-relaxed">Cada madrugada abrimos nuestro obrador para amasar a mano pappardelle, ravioli y gnocchi siguiendo los cuadernos de la Nonna Lucia. Importamos directamente de pequeños productores de Emilia-Romaña y Campania.</p>
+        
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 text-espresso/85 text-sm">
+          <div class="flex items-center gap-3 bg-crema p-3.5 rounded-xl">
+            <span class="text-terracota font-bold text-lg">✦</span>
+            <span>Masa madre fermentada 72 horas</span>
+          </div>
+          <div class="flex items-center gap-3 bg-crema p-3.5 rounded-xl">
+            <span class="text-terracota font-bold text-lg">✦</span>
+            <span>Burrata fresca llegada desde Puglia</span>
+          </div>
+          <div class="flex items-center gap-3 bg-crema p-3.5 rounded-xl">
+            <span class="text-terracota font-bold text-lg">✦</span>
+            <span>Aceite de oliva virgen extra siciliano</span>
+          </div>
+          <div class="flex items-center gap-3 bg-crema p-3.5 rounded-xl">
+            <span class="text-terracota font-bold text-lg">✦</span>
+            <span>Opciones de pasta sin gluten artesanal</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta Menú Degustación -->
+        <div class="p-8 bg-crema border border-espresso/10 rounded-3xl flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div>
+            <span class="bg-terracota text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Experiencia del Chef</span>
+            <h3 class="font-display font-bold text-3xl text-espresso mt-2">Menú Degustación "Giro d'Italia"</h3>
+            <p class="text-espresso/70 text-sm mt-1">Antipasto misto, 2 pastas de temporada, segundo al horno y tiramisú clásico.</p>
+          </div>
+          <div class="text-center sm:text-right shrink-0">
+            <span class="font-display font-bold text-5xl text-terracota">46 €</span>
+            <p class="text-xs text-espresso/60 mt-1">por persona (maridaje +18 €)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La Carta con Filtros Interactivos -->
+  <section id="carta" class="scroll-mt-20 py-24 px-6 bg-crema">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-terracota font-semibold text-xs uppercase tracking-widest">La Carta</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mt-2 mb-3">Clásicos de nuestra cocina</h2>
+        <p class="text-espresso/70">Elaborados al momento con producto de denominación de origen protegida.</p>
+        
+        <!-- Botones de filtro -->
+        <div class="flex flex-wrap justify-center gap-2 mt-8" id="filtros-carta">
+          <button data-filtro="todos" class="btn-filtro bg-espresso text-crema px-5 py-2 rounded-full text-sm font-medium transition">Todos</button>
+          <button data-filtro="antipasti" class="btn-filtro bg-white text-espresso hover:bg-espresso/10 px-5 py-2 rounded-full text-sm font-medium transition">Antipasti</button>
+          <button data-filtro="pasta" class="btn-filtro bg-white text-espresso hover:bg-espresso/10 px-5 py-2 rounded-full text-sm font-medium transition">Pasta Fresca</button>
+          <button data-filtro="pizza" class="btn-filtro bg-white text-espresso hover:bg-espresso/10 px-5 py-2 rounded-full text-sm font-medium transition">Horno de Leña</button>
+          <button data-filtro="dolci" class="btn-filtro bg-white text-espresso hover:bg-espresso/10 px-5 py-2 rounded-full text-sm font-medium transition">Dolci</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-platos">
+        
+        <!-- Plato 1 -->
+        <article data-categoria="antipasti" class="plato-card bg-white rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition duration-300 flex flex-col">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=800&q=80" alt="Burrata Pugliese" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            <span class="absolute top-4 left-4 bg-white/95 text-oliva text-xs font-semibold px-3 py-1 rounded-full">Vegetariano</span>
+          </div>
+          <div class="p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-display font-bold text-2xl">Burrata Pugliese & Tartufo</h3>
+                <span class="font-bold text-lg text-terracota shrink-0">16,50 €</span>
+              </div>
+              <p class="text-espresso/70 text-sm leading-relaxed mb-4">Burrata artesanal de Andria de 250g sobre carpaccio de tomate corazón de buey, pesto de pistacho de Bronte y lascas de trufa negra.</p>
+            </div>
+            <p class="text-xs text-espresso/50 uppercase tracking-wider font-medium">Antipasto · Para compartir</p>
+          </div>
+        </article>
+
+        <!-- Plato 2 -->
+        <article data-categoria="pasta" class="plato-card bg-white rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition duration-300 flex flex-col">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80" alt="Spaghetti alla Carbonara" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            <span class="absolute top-4 left-4 bg-terracota text-white text-xs font-semibold px-3 py-1 rounded-full">Receta Romana</span>
+          </div>
+          <div class="p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-display font-bold text-2xl">Spaghetti alla Carbonara</h3>
+                <span class="font-bold text-lg text-terracota shrink-0">17,50 €</span>
+              </div>
+              <p class="text-espresso/70 text-sm leading-relaxed mb-4">Auténtica receta romana sin nata: yema de huevo campero pasteurizada, guanciale crujiente de Amatrice, Pecorino Romano DOP y pimienta negra.</p>
+            </div>
+            <p class="text-xs text-espresso/50 uppercase tracking-wider font-medium">Pasta al Bronce</p>
+          </div>
+        </article>
+
+        <!-- Plato 3 -->
+        <article data-categoria="pasta" class="plato-card bg-white rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition duration-300 flex flex-col">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1587740908075-9e245070dfaa?auto=format&fit=crop&w=800&q=80" alt="Ravioli de calabaza y salvia" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            <span class="absolute top-4 left-4 bg-espresso text-oro text-xs font-semibold px-3 py-1 rounded-full">Favorito de la casa</span>
+          </div>
+          <div class="p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-display font-bold text-2xl">Ravioli di Zucca e Salvia</h3>
+                <span class="font-bold text-lg text-terracota shrink-0">18,90 €</span>
+              </div>
+              <p class="text-espresso/70 text-sm leading-relaxed mb-4">Pasta fresca rellena de calabaza asada y ricotta de oveja, salteada con mantequilla avellanada, hojas de salvia crujiente y amaretti.</p>
+            </div>
+            <p class="text-xs text-espresso/50 uppercase tracking-wider font-medium">Pasta Fresca Rellena</p>
+          </div>
+        </article>
+
+        <!-- Plato 4 -->
+        <article data-categoria="pizza" class="plato-card bg-white rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition duration-300 flex flex-col">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Pizza Margherita Verace" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            <span class="absolute top-4 left-4 bg-white/95 text-oliva text-xs font-semibold px-3 py-1 rounded-full">Horno 450 °C</span>
+          </div>
+          <div class="p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-display font-bold text-2xl">Pizza Regina Margherita</h3>
+                <span class="font-bold text-lg text-terracota shrink-0">15,50 €</span>
+              </div>
+              <p class="text-espresso/70 text-sm leading-relaxed mb-4">Masa de larga fermentación, tomate San Marzano DOP triturado a mano, mozzarella fior di latte de Campania, albahaca fresca y AOVE.</p>
+            </div>
+            <p class="text-xs text-espresso/50 uppercase tracking-wider font-medium">Pizza Napoletana Contemporánea</p>
+          </div>
+        </article>
+
+        <!-- Plato 5 -->
+        <article data-categoria="pizza" class="plato-card bg-white rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition duration-300 flex flex-col">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizza Tartufata y Mortadella" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            <span class="absolute top-4 left-4 bg-terracota text-white text-xs font-semibold px-3 py-1 rounded-full">Especialidad</span>
+          </div>
+          <div class="p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-display font-bold text-2xl">Pizza Bologna & Pistacchio</h3>
+                <span class="font-bold text-lg text-terracota shrink-0">19,50 €</span>
+              </div>
+              <p class="text-espresso/70 text-sm leading-relaxed mb-4">Base blanca con provola ahumada, mortadella di Bologna IGP cortada al momento, stracciatella fresca y granillo de pistacho tostado.</p>
+            </div>
+            <p class="text-xs text-espresso/50 uppercase tracking-wider font-medium">Pizza Gourmet</p>
+          </div>
+        </article>
+
+        <!-- Plato 6 -->
+        <article data-categoria="dolci" class="plato-card bg-white rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-xl transition duration-300 flex flex-col">
+          <div class="relative h-60 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80" alt="Tiramisú Clásico" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+            <span class="absolute top-4 left-4 bg-espresso text-oro text-xs font-semibold px-3 py-1 rounded-full">Hecho al día</span>
+          </div>
+          <div class="p-7 flex flex-col flex-1 justify-between">
+            <div>
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-display font-bold text-2xl">Tiramisù della Nonna</h3>
+                <span class="font-bold text-lg text-terracota shrink-0">8,50 €</span>
+              </div>
+              <p class="text-espresso/70 text-sm leading-relaxed mb-4">Bizcochos savoiardi empapados en café espresso recién hecho y licor Amaretto, crema sedosa de mascarpone y cacao puro amargo.</p>
+            </div>
+            <p class="text-xs text-espresso/50 uppercase tracking-wider font-medium">Dolce Tradizionale</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Bodega -->
+  <section id="bodega" class="scroll-mt-20 py-24 px-6 bg-espresso text-crema">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-6">
+        <span class="text-oro font-semibold text-xs uppercase tracking-widest">La Cantina</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mt-2 mb-6">Más de 120 referencias de viñedos italianos</h2>
+        <p class="text-crema/75 text-lg mb-8 leading-relaxed">Desde tintos estructurados de Barolo y Brunello di Montalcino hasta blancos volcánicos del Etna. Nuestro sumiller te guiará para encontrar el maridaje perfecto por copa o botella.</p>
+        <div class="space-y-4 border-t border-crema/15 pt-6">
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="font-display font-bold text-xl text-oro">Chianti Classico Riserva DOCG</p>
+              <p class="text-xs text-crema/60">Toscana · 100% Sangiovese</p>
+            </div>
+            <span class="font-semibold">7,50 € copa / 36 € bot.</span>
+          </div>
+          <div class="flex justify-between items-center border-t border-crema/10 pt-4">
+            <div>
+              <p class="font-display font-bold text-xl text-oro">Etna Bianco DOC</p>
+              <p class="text-xs text-crema/60">Sicilia · Carricante & Catarratto</p>
+            </div>
+            <span class="font-semibold">7,00 € copa / 34 € bot.</span>
+          </div>
+          <div class="flex justify-between items-center border-t border-crema/10 pt-4">
+            <div>
+              <p class="font-display font-bold text-xl text-oro">Barolo Serralunga d'Alba</p>
+              <p class="text-xs text-crema/60">Piamonte · Nebbiolo</p>
+            </div>
+            <span class="font-semibold">68 € bot.</span>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-6">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=80" alt="Copas de vino tinto italiano" class="rounded-3xl shadow-2xl w-full h-[460px] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Opiniones -->
+  <section id="opiniones" class="scroll-mt-20 py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="text-terracota font-semibold text-xs uppercase tracking-widest">Testimonios</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mt-2">Lo que dicen nuestros comensales</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <blockquote class="p-8 bg-crema rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="text-oro text-lg mb-4">★★★★★</div>
+            <p class="text-espresso/85 leading-relaxed mb-6">“La carbonara más fiel a la que probé en Roma. El punto del guanciale y la cremosidad del pecorino son de otro planeta. Un rincón imprescindible en Salamanca.”</p>
+          </div>
+          <footer class="text-sm font-semibold text-terracota">— Elena Martínez, Guía Gastronómica</footer>
+        </blockquote>
+        <blockquote class="p-8 bg-crema rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="text-oro text-lg mb-4">★★★★★</div>
+            <p class="text-espresso/85 leading-relaxed mb-6">“Ambiente cálido con luz tenue, servicio impecable y unos ravioli de calabaza que emocionan. Dejad hueco para el tiramisú, lo preparan con un mimo increíble.”</p>
+          </div>
+          <footer class="text-sm font-semibold text-terracota">— Carlos Mendoza, Madrid</footer>
+        </blockquote>
+        <blockquote class="p-8 bg-crema rounded-3xl flex flex-col justify-between">
+          <div>
+            <div class="text-oro text-lg mb-4">★★★★★</div>
+            <p class="text-espresso/85 leading-relaxed mb-6">“La masa de sus pizzas tiene un alveolado espectacular y nada pesada. Nos dejamos aconsejar por el sumiller con un vino del Etna y fue un acierto total.”</p>
+          </div>
+          <footer class="text-sm font-semibold text-terracota">— Giulia Rossi, Milán</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservas -->
+  <section id="reservas" class="scroll-mt-20 py-24 px-6 bg-crema">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-terracota font-semibold text-xs uppercase tracking-widest">Reservas Online</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl mt-2 mb-3">Reserva tu mesa</h2>
+        <p class="text-espresso/70">Martes a domingo · Comidas de 13:30 a 16:00 · Cenas de 20:30 a 23:30</p>
+      </div>
+
+      <form id="form-reserva" class="p-8 md:p-10 bg-white rounded-3xl shadow-md space-y-5 border border-espresso/5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label for="fecha-tw" class="block text-xs uppercase tracking-wider font-semibold text-espresso/70 mb-1.5">Fecha</label>
+            <input type="date" id="fecha-tw" required class="w-full px-3.5 py-2.5 bg-crema/60 border border-espresso/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracota" />
+          </div>
+          <div>
+            <label for="hora-tw" class="block text-xs uppercase tracking-wider font-semibold text-espresso/70 mb-1.5">Turno</label>
+            <select id="hora-tw" class="w-full px-3.5 py-2.5 bg-crema/60 border border-espresso/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracota">
+              <option value="14:00">14:00 (Comida)</option>
+              <option value="15:00">15:00 (Comida)</option>
+              <option value="21:00">21:00 (Cena)</option>
+              <option value="22:00">22:00 (Cena)</option>
+            </select>
+          </div>
+          <div>
+            <label for="comensales-tw" class="block text-xs uppercase tracking-wider font-semibold text-espresso/70 mb-1.5">Comensales</label>
+            <select id="comensales-tw" class="w-full px-3.5 py-2.5 bg-crema/60 border border-espresso/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracota">
+              <option value="2">2 personas</option>
+              <option value="3">3 personas</option>
+              <option value="4">4 personas</option>
+              <option value="6">6 personas</option>
+              <option value="8">8 personas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="nombre-tw" class="block text-xs uppercase tracking-wider font-semibold text-espresso/70 mb-1.5">Nombre completo</label>
+            <input type="text" id="nombre-tw" required placeholder="Ej. Marco Bellini" class="w-full px-3.5 py-2.5 bg-crema/60 border border-espresso/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracota" />
+          </div>
+          <div>
+            <label for="telefono-tw" class="block text-xs uppercase tracking-wider font-semibold text-espresso/70 mb-1.5">Teléfono</label>
+            <input type="tel" id="telefono-tw" required placeholder="Ej. 612 345 678" class="w-full px-3.5 py-2.5 bg-crema/60 border border-espresso/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracota" />
+          </div>
+        </div>
+
+        <div>
+          <label for="notas-tw" class="block text-xs uppercase tracking-wider font-semibold text-espresso/70 mb-1.5">Alergias o peticiones especiales (opcional)</label>
+          <input type="text" id="notas-tw" placeholder="Ej. Mesa tranquila, celiaquía, aniversario..." class="w-full px-3.5 py-2.5 bg-crema/60 border border-espresso/15 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracota" />
+        </div>
+
+        <button type="submit" class="w-full bg-terracota hover:bg-espresso text-white font-semibold py-4 rounded-full transition shadow-md cursor-pointer">Confirmar reserva</button>
+        <p id="mensaje-reserva" class="hidden text-center text-oliva bg-oliva/10 py-3 px-4 rounded-xl font-medium text-sm"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-espresso text-crema/75 py-14 px-6 border-t border-crema/10">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left items-center">
+      <div>
+        <p class="font-display font-bold text-3xl text-crema mb-2">Osteria <span class="italic text-oro">del Vicolo</span></p>
+        <p class="text-sm">Cocina tradicional italiana & pasta fresca artesanal.</p>
+      </div>
+      <div class="text-sm space-y-1 md:text-center">
+        <p class="text-crema font-semibold">Calle de Claudio Coello 48, Madrid</p>
+        <p>Reservas: +34 910 482 910</p>
+        <p>ciao@osteriadelvicolo.es</p>
+      </div>
+      <div class="text-sm md:text-right">
+        <p>© 2026 Osteria del Vicolo Madrid</p>
+        <p class="text-xs text-crema/50 mt-1">Lunes cerrado por descanso del personal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript para menú móvil, filtros de carta y confirmación de reserva -->
+  <script>
+    // Menú móvil
+    const btnMenu = document.getElementById('btn-menu');
+    const menuMovil = document.getElementById('menu-movil');
+    btnMenu.addEventListener('click', () => {
+      menuMovil.classList.toggle('hidden');
+    });
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    menuMovil.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => menuMovil.classList.add('hidden'));
+    });
+
+    // Filtro de platos en la carta
+    const botonesFiltro = document.querySelectorAll('.btn-filtro');
+    const tarjetasPlato = document.querySelectorAll('.plato-card');
+
+    botonesFiltro.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const categoria = boton.dataset.filtro;
+
+        botonesFiltro.forEach(b => {
+          b.classList.remove('bg-espresso', 'text-crema');
+          b.classList.add('bg-white', 'text-espresso');
+        });
+        boton.classList.remove('bg-white', 'text-espresso');
+        boton.classList.add('bg-espresso', 'text-crema');
+
+        tarjetasPlato.forEach(tarjeta => {
+          if (categoria === 'todos' || tarjeta.dataset.categoria === categoria) {
+            tarjeta.classList.remove('hidden');
+          } else {
+            tarjeta.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Formulario de reserva
+    const formReserva = document.getElementById('form-reserva');
+    const mensajeReserva = document.getElementById('mensaje-reserva');
+
+    formReserva.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre-tw').value;
+      const fecha = document.getElementById('fecha-tw').value;
+      const hora = document.getElementById('hora-tw').value;
+      const comensales = document.getElementById('comensales-tw').value;
+
+      mensajeReserva.textContent = `Grazie mille, ${nombre}! Tu mesa para ${comensales} personas el ${fecha} a las ${hora} ha quedado registrada.`;
+      mensajeReserva.classList.remove('hidden');
+      formReserva.reset();
+    });
+  </script>
+</body>
+</html>
